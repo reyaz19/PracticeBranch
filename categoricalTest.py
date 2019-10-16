@@ -15,7 +15,7 @@ print(df.info())
 for col in df.columns:
     # print('\n', pd.Categorical(df[col]))
     print("********************************************************")
-    print(df[col].describe())
+    print('Columns dataframe',df[col].describe())       #'Columns dataframe' added
     if df[col].dtype=='int64' or df[col].dtype=='float64':
         print("Median :: ",s.median(df[col])," , ", end=' ')
         # print(s.mode(df[col]), " , ", end=' ')
@@ -25,7 +25,7 @@ for col in df.columns:
         print('\n')
 
 datacrossed=pd.crosstab(df['Gender'],df['Happiness'],margins = False)
-print(datacrossed)
+print('Crossed data',datacrossed)                 #'Crossed data' added
 print('')
 
 stat, p, dof, expected = chi2_contingency(datacrossed)
